@@ -1,6 +1,6 @@
 {
   "name": "mime-message",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Simple node module to create mime type messages easily and safety!",
   "main": "index.js",
   "scripts": {
