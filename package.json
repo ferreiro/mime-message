@@ -1,0 +1,24 @@
+{
+  "name": "mime-message",
+  "version": "0.0.1",
+  "description": "Simple node module to create mime type messages easily and safety!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jorge Ferreiro <jorge@ferreiro.me>",
+  "license": "MIT",
+  "dependencies": {
+    "js-base64": "^2.1.9",
+    "request": "^2.81.0"
+  },
+  "keywords": [
+    "Mime",
+    "Message",
+    "Mime type",
+    "text/plain",
+    "text/html"
+  ],
+  "homepage": "https://github.com/ferreiro/mime-message",
+  "respository": { "type": "git", "url": "https://github.com/ferreiro/mime-message" }
+}
