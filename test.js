@@ -16,6 +16,8 @@ const message = mimeMessage.createMimeMessage({
     name: 'Test',
     email: '<test@test.com>'
   },
+  cc: '',
+  bcc: '',
   date: 'Date: Fri, 21 Nov 1997 09:55:06 -0600',
   subject: 'Hello World!',
   message: '<h1>Hello from the other side!</h1><p>This is pretty awesome!</p>'
