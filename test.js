@@ -1,13 +1,4 @@
-# Mime-message
-
-Simple node module to create mime types messages easily and safety!
-
-Hi guys! I decided to create this module because I'm working with emails and I did not found any node module to easily create mime messages in the javascript ecosystem. I decided to release it because I'm sure more people has this problem! :).
-
-# How to use it?
-
-```javascript
-const mimeMessage = require('mime-message')
+const mimeMessage = require('./lib/MimeMessage')
 
 const message = mimeMessage.createMimeMessage({
   type: 'text/html',
@@ -31,6 +22,3 @@ message.toBase64SafeString((err, messageBase64Safe) => {
   }
   console.log(messageBase64Safe)
 })
-```
-
-No more documentation by now. Sorry guys, I'm quite busy right now ><.
