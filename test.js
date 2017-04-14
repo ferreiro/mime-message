@@ -3,7 +3,9 @@ const Mime = require('./lib/MimeMessage')
 const messageData = {
   type: 'text/html',
   encoding: 'UTF-8',
-  from: 'Jorge <mySuperEmail@example.com>',
+  from: [
+    'Jorge <mySuperEmail@example.com>'
+  ],
   to: [
     'User 1 <mail@example.com>',
     'User 2 <mail@example.com>'
