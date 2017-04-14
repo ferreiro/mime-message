@@ -1,4 +1,4 @@
-const mimeMessage = require('./lib/MimeMessage')
+const Mime = require('./lib/MimeMessage')
 
 const messageData = {
   type: 'text/html',
@@ -20,23 +20,7 @@ const messageData = {
   body: '<h1>Hello from the other side!</h1><p>This is pretty awesome!</p>'
 }
 
-mimeMessage.createMimeMessage(messageData, (err, message) => {
-  if (err) {
-    console.log(err)
-  }
-  console.log(message)
-})
-
-mimeMessage.createMimeMessage(messageData, (err, message) => {
-  if (err) {
-    console.log(err)
-    return ;
-  }
-  // Get the base 64 safe string
-  message.toBase64SafeString((err, messageBase64Safe) => {
-    if (err) {
-      console.log(err)
-    }
-    console.log(messageBase64Safe)
-  })
-})
+if (Mime.validMimeMessage(messageData)) {
+  const message = Mime.createMimeMessage(messageData)
+  console.log(message.toBase64SafeString())
+}
