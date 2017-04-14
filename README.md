@@ -7,29 +7,53 @@ Hi guys! I decided to create this module because I'm working with emails and I d
 # How to use it?
 
 ```javascript
-const mimeMessage = require('mime-message')
+const mimeMessage = require('./lib/MimeMessage')
 
-const message = mimeMessage.createMimeMessage({
+const messageData = {
   type: 'text/html',
   encoding: 'UTF-8',
-  from: {
-    name: 'Jorge Ferreiro',
-    email: 'jorge@ferreiro.me'
-  },
-  to: {
-    name: 'Jorge Ferreiro',
-    email: 'jorge@ferreiro.me'
-  },
-  date: 'Date: Fri, 21 Nov 1997 09:55:06 -0600',
+  from: 'Jorge <mySuperEmail@example.com>',
+  to: [
+    'User 1 <mail@example.com>',
+    'User 2 <mail@example.com>'
+  ],
+  cc: [
+    'User 3 <mail@example.com>'
+  ],
+  bcc: [],
+  replyTo: [
+    'Jorge <mySuperEmail@example.com>',
+  ],
+  date: new Date(),
   subject: 'Hello World!',
-  message: '<h1>Hello from the other side!</h1><p>This is pretty awesome!</p>'
-})
+  body: '<h1>Hello from the other side!</h1><p>This is pretty awesome!</p>'
+}
 
-message.toBase64SafeString((err, messageBase64Safe) => {
+mimeMessage.createMimeMessage(messageData, (err, message) => {
   if (err) {
     console.log(err)
   }
-  console.log(messageBase64Safe)
+  console.log(message)
+})
+```
+
+Here is another example generating the base64 string safe message.
+
+```javascript
+// messageData is the same as example 1
+
+mimeMessage.createMimeMessage(messageData, (err, message) => {
+  if (err) {
+    console.log(err)
+    return ;
+  }
+  // Get the base 64 safe string
+  message.toBase64SafeString((err, messageBase64Safe) => {
+    if (err) {
+      console.log(err)
+    }
+    console.log(messageBase64Safe)
+  })
 })
 ```
 
@@ -37,4 +61,4 @@ No more documentation by now. Sorry guys, I'm quite busy right now ><.
 
 # Useful papers
 
-[RFC2822](https://tools.ietf.org/html/rfc2822#page-18)
+* [RFC2822](https://tools.ietf.org/html/rfc2822#page-18)
