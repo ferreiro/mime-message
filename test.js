@@ -24,5 +24,7 @@ const messageData = {
 
 if (Mime.validMimeMessage(messageData)) {
   const message = Mime.createMimeMessage(messageData)
-  console.log(message.toBase64SafeString())
+  const base64SafeString = message.toBase64SafeString()
+
+  console.log(base64SafeString)
 }

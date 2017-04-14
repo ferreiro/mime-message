@@ -35,11 +35,12 @@ const messageData = {
   body: '<h1>Hello from the other side!</h1><p>This is pretty awesome!</p>'
 }
 
-Mime.validMimeMessage(messageData)
-=> True
+if (Mime.validMimeMessage(messageData)) {
+  const message = Mime.createMimeMessage(messageData)
+  const base64SafeString = message.toBase64SafeString()
 
-const message = Mime.createMimeMessage(messageData)
-console.log(message.toBase64SafeString())
+  console.log(base64SafeString)
+}
 ```
 
 No more documentation by now. Sorry guys, I'm quite busy right now ><.
