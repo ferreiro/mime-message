@@ -34,3 +34,7 @@ message.toBase64SafeString((err, messageBase64Safe) => {
 ```
 
 No more documentation by now. Sorry guys, I'm quite busy right now ><.
+
+# Useful papers
+
+[RFC2822](https://tools.ietf.org/html/rfc2822#page-18)
