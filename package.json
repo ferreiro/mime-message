@@ -9,7 +9,7 @@
   "author": "Jorge Ferreiro <jorge@ferreiro.me>",
   "license": "MIT",
   "dependencies": {
-    "js-base64": "^2.1.9",
+    "js-base64": "^3.2.4",
     "request": "^2.81.0"
   },
   "keywords": [
